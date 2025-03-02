@@ -23,9 +23,11 @@ app.use(express.static("public"));    // to store static data use a seperate fol
 app.use(cookieParser());    // to store data in cookies of user data to retrive user data and stored in cookies it coulde be working with server only
 
 app.get("/", (req, res) => {
-  res.send("Backend is running on Vercel!");
+  res.send("Backend is running on render!");
 });
-
+app.get("/get-data",(req,res) =>{
+  res.json({name:"babloo",age:26,marks:99})
+})
 // import router
 import userRouter from "./routes/user.routes.js";
 app.use("/api/v1/users",userRouter);
